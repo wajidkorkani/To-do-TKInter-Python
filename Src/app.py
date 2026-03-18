@@ -8,12 +8,13 @@ To_Do = [
 
 # Create window
 app = ctk.CTk()
-app.title("To-Do List")
-app.geometry("400x400")
+app.title("To-Do")
+app.geometry("800x800")
 
 # Frame for tasks
 task_frame = ctk.CTkFrame(app)
 task_frame.pack(pady=10, fill="both", expand=True)
+task_frame._bg_color = "black"
 
 # Function to display tasks
 def show_tasks():
