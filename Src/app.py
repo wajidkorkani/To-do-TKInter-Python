@@ -1,10 +1,7 @@
 import customtkinter as ctk
 
 # To-do list
-To_Do = [
-    {"task": "Buy groceries", "completed": False},
-    {"task": "Walk the dog", "completed": False}
-]
+To_Do = []
 
 # Create window
 app = ctk.CTk()
