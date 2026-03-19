@@ -6,7 +6,7 @@ To_Do = []
 # Create window
 app = ctk.CTk()
 app.title("To-Do")
-app.geometry("800x800")
+app.geometry("600x600")
 
 # Frame for tasks
 task_frame = ctk.CTkFrame(app)
