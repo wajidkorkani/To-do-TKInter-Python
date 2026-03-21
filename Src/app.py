@@ -8,6 +8,19 @@ To_do_data = {
     2: {"task": "Finish project report", "status": "incomplete"}
 }
 
+
+def display_tasks():
+    for task_id, task_info in To_do_data.items():
+        task_label = ctk.CTkLabel(
+            list_frame,
+            text=f"{task_id}. {task_info['task']} - {task_info['status']}",
+            width=250,
+            height=40,
+            fg_color="orangered",
+            corner_radius=10
+        )
+        task_label.grid(row=task_id + 1, column=0, pady=5)
+
 list_frame = ctk.CTkFrame(app)
 list_frame.pack(expand=True, padx=20, pady=20)
 
@@ -30,15 +43,13 @@ button = ctk.CTkButton(
 )
 button.grid(row=0, column=1, padx=10)
 
-for task_id, task_info in To_do_data.items():
-    task_label = ctk.CTkLabel(
-        list_frame,
-        text=f"{task_id}. {task_info['task']} - {task_info['status']}",
-        width=250,
-        height=40,
-        fg_color="orangered",
-        corner_radius=10
-    )
-    task_label.grid(row=task_id + 1, column=0, pady=5)
+def get_data():
+    task = entry.get()
+    id = len(To_do_data) + 1
+    To_do_data[id] = {"task": task, "status": "incomplete"}
+    display_tasks()
+
+button.configure(command=get_data)
+display_tasks()
 
 app.mainloop()
